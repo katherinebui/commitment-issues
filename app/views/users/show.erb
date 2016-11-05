@@ -1,5 +1,10 @@
 <% if current_user %>
+
   <h2>Welcome <%= current_user.username %>!</h2>
-  
-  
+
+  Here are all your reminders:<br>
+  <% @user.reminders.each do |reminder| %>
+    <%= reminder.body %><br>
+  <% end %> 
+
 <% end %>
