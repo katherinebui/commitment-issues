@@ -13,6 +13,10 @@ gem 'activerecord', "~>4.2"
 
 gem 'rake'
 gem 'bcrypt'
+gem 'hirb'
+
+gem 'httparty'
+gem 'dotenv'
 
 gem 'shotgun'
 

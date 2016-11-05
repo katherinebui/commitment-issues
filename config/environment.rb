@@ -15,6 +15,11 @@ require 'pg'
 require 'active_record'
 require 'logger'
 require 'json'
+require 'hirb'
+
+require 'httparty'
+require 'dotenv'
+Dotenv.load
 
 require 'sinatra'
 require "sinatra/reloader" if development?
