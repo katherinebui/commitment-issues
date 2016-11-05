@@ -3,6 +3,9 @@ require 'bcrypt'
 class User < ActiveRecord::Base
   include BCrypt
 
+  has_many :messages
+  has_many :reminders, through: :messages, foreign_key: :reminder_id
+
   validates_presence_of :username
   validates_uniqueness_of :username
   validates_presence_of :password
