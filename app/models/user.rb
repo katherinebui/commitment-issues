@@ -1,7 +1,5 @@
 require 'bcrypt'
-
 class User < ActiveRecord::Base
-  # users.password_hash in the database is a :string
   include BCrypt
 
 	validates_presence_of :first_name

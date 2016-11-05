@@ -14,7 +14,11 @@ gem 'rake'
 
 gem 'bcrypt'
 gem 'shotgun'
-gem 'pry'
+gem 'pry-byebug'
+gem 'rb-readline'
+gem 'awesome_print'
+
+gem 'faker'
 
 group :test do
   gem 'shoulda-matchers'
@@ -25,5 +29,9 @@ end
 
 group :test, :development do
   gem 'factory_girl'
-  gem 'faker'
+end
+
+group :api_helpers do
+  gem 'httparty'
+  gem 'dotenv'
 end
