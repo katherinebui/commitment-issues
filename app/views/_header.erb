@@ -1,11 +1,10 @@
 <% if current_user %>
-<a href="/users/<%= current_user.id %>">My Stuff</a><br>
-<a href="/">Home Page</a><br>
-<form action="/sessions" method="post">
-  <input type="hidden" name="_method" value="DELETE">
-  <input type="submit" value="Logout">
-</form>
+  <a href="/users/<%= current_user.id %> ">Profile Page</a>
+  <form action="/sessions" method="POST">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="submit" value="Logout">
+  </form>
 <% else %>
-<a href="/sessions/login">Login</a>
-<a href="/users/new">Signup</a>
+  <a href="/sessions/new">Login</a>
+  <a href="/users/new">Register</a>
 <% end %>
