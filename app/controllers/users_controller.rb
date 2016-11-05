@@ -38,24 +38,4 @@ get '/users/:id' do
   erb :'users/show'
 end
 
-# USERS EDIT
-get '/users/:id/edit' do
-  @user = User.find(params[:id])
-  erb :'users/edit'
-end
 
-
-# USERS UPDATE
-put '/users/:id' do
-  @user = User.find(params[:id])
-  @user.update(params[:user])
-  redirect "/users/#{@user.id}"
-end
-
-
-# USERS DESTROY
-delete '/users/:id' do
-  @user = User.find(params[:id])
-  @user.destroy
-  redirect "/users"
-end
