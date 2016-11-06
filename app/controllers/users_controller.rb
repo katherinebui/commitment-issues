@@ -38,4 +38,15 @@ get '/users/:id' do
   erb :'users/show'
 end
 
+get '/text' do
+  send_text_message
+  redirect '/'
+end
+
+
+
+
+
+
+
 
