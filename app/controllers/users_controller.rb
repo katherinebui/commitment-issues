@@ -1,4 +1,3 @@
-
 # USERS INDEX
 get '/users' do
   @users = User.all
@@ -13,7 +12,6 @@ end
 
 # USERS CREATE
 post '/users' do
-
   if params[:password_confirmation] == params[:user][:password]
     @user = User.new(params[:user])
 
@@ -28,8 +26,7 @@ post '/users' do
   else
     @errors = ["Passwords do not match!"]
     erb :'users/new'
-  end
-  
+  end 
 end
 
 # USERS SHOW
@@ -38,10 +35,23 @@ get '/users/:id' do
   erb :'users/show'
 end
 
-get '/text' do
-  send_text_message
-  redirect '/'
+# EDIT
+get '/users/:id/edit' do
+  @user = User.find(params[:id])
+  erb :'users/edit'
 end
+
+# UPDATE
+put '/users/:id' do 
+  @user = User.find(params[:id])
+  @user.update(params[:user])
+  redirect "/users/#{@user.id}"
+end
+
+# get '/text' do
+#   send_text_message
+#   redirect '/'
+# end
 
 
 

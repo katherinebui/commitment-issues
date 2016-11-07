@@ -1,0 +1,19 @@
+<% if current_user %>
+
+<% if @errors %>
+  <% @errors.each do |error| %>
+    <%= error %>
+  <% end %>
+<% end %>
+
+<form action="/users/<%= @user.id %>" method="POST">
+  <input type="hidden" name="_method" value="PUT">
+  <input type="hidden" name=<%= @user.username%> >
+  <input type="hidden" name=<%= @user.password%> >
+  <input type="hidden" name=<%= @user.email%> >
+  <input type="text" name="user[phone_number]" placeholder="Can I get yo digits?">
+  <input type="text" name="user[time_increment]" placeholder="Timer">
+  <input type="submit" value="Submit">
+</form>
+
+<% end %>  
