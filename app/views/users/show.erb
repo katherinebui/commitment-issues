@@ -1,7 +1,9 @@
   <% if current_user %>
 
   <h2>Welcome <%= current_user.username %>!</h2>
-  <a href="/users/<%= @user.id %>/edit">User Settings</a>
-
+  <div class="userprofile">
+    <a id="usersetting" href="/users/<%= @user.id %>/edit" >User Settings</a><br>
+    <button name="button" id="start-button">Start my reminders!</button>
+  </div>
 
   <% end %>
