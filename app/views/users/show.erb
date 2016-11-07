@@ -1,13 +1,7 @@
-<% if current_user %>
+  <% if current_user %>
 
   <h2>Welcome <%= current_user.username %>!</h2>
+  <a href="/users/<%= @user.id %>/edit">User Settings</a>
 
-  Here are all your reminders:<br>
-  <% @user.reminders.each do |reminder| %>
-    <%= reminder.body %><br>
-  <% end %> 
 
- <a href="/users/<%= @user.id %>/edit">User Settings</a>
-
-<% end %>
-
+  <% end %>

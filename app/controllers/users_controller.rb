@@ -1,8 +1,8 @@
 # USERS INDEX
-get '/users' do
-  @users = User.all
-  erb :'users/index'
-end
+# get '/users' do
+#   @users = User.all
+#   erb :'users/index'
+# end
 
 # USERS NEW
 get '/users/new' do
