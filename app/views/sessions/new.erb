@@ -1,13 +1,14 @@
-<h1>I am committed to fixing my commitment issues</h1>
+<center>
+<h1>I am committed to fixing my commitment issues.</h1>
 
 <% if @errors %>
   <% @errors.each do |error| %>
     <%= error %>
   <% end %>
 <% end %>
-
-<form action="/sessions" method="POST">
+<form action="/sessions" method="POST" id="login_form">
   <input type="text" name="email" placeholder="Email:">
   <input type="password" name="password" placeholder="Password:">
-  <input type="submit" value="Login!">
+  <input type="submit" value="login" id="login_button">
 </form>
+</center>

@@ -1,0 +1,11 @@
+<% if current_user %>
+
+<% if @errors %>
+  <% @errors.each do |error| %>
+    <%= error %>
+  <% end %>
+<% end %>
+<div id="divUserSet">
+<%= erb :'partials/_userSetting' %>
+</div>
+<% end %>  
