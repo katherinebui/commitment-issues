@@ -19,8 +19,9 @@ var userSettingListener = function(){
       url: action
     })
       .done(function(response){
-        // form.show(response);
-        console.log(response)
+        $(".userprofile").append(response);
+        form.hide();
+        // console.log(response)
       })
       .fail(function(response){
         alert("Something went wrong!")
@@ -28,9 +29,6 @@ var userSettingListener = function(){
 
   });
 };
-
-
-
 
 
 
