@@ -32,8 +32,6 @@ var userSettingListener = function(){
 
 
 
-
-
 // var startReminderListener = function(){
 //   $("#start-button").click(function(event){
 //     event.preventDefault();
@@ -47,8 +45,13 @@ var userSettingListener = function(){
 //     })
 //       .done(function(response){
 //         console.log(response)
-//         // alert("Let's start solvin' yo commitment issues!")
+//         alert("Let's start solvin' yo commitment issues!")
 //     });
 //    // }, 35000);
 //   });
-// }
+}
+
+
+
+
+

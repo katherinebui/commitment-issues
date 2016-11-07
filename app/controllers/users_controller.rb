@@ -54,16 +54,16 @@ put '/users/:id' do
   redirect "/users/#{@user.id}"
 end
 
-# get '/users/:id/text' do
-#   @users = User.find(params[:id])
-#   @user_id = params[:id]
-#   if request.xhr?
-#     @user_id.to_json
-#     # send_text_message
-#   else
-#     redirect "/users/#{@user.id}"
-#   end
-# end
+get '/users/:id/text' do
+  @users = User.find(params[:id])
+  @user_id = params[:id]
+  if request.xhr?
+    # @user_id.to_json
+    send_text_message
+  else
+    redirect "/users/#{@user.id}"
+  end
+end
 
 
 
