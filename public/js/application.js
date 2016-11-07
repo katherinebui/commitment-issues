@@ -1,16 +1,33 @@
 $(document).ready(function() {
   // startReminderListener();
-  newUserListener();
+  userSettingListener();
 });
 
 
 
-var newUserListener = function(){
-  $("#new_user_form").on("click", "#new_user_button", function(event){
+var userSettingListener = function(){
+  $("#usersetting").on("click", function(event){
     event.preventDefault();
-    console.log("fuck the default")
-  })
-}
+    // console.log("fuck the default")
+
+    var form = $(this);
+    var action = form.attr("href");
+    console.log(action)
+
+    $.ajax({
+      method: "GET",
+      url: action
+    })
+      .done(function(response){
+        // form.show(response);
+        console.log(response)
+      })
+      .fail(function(response){
+        alert("Something went wrong!")
+      })
+
+  });
+};
 
 
 
