@@ -15,8 +15,6 @@ require 'pg'
 require 'active_record'
 require 'logger'
 
-require 'resque/scheduler/tasks'
-
 require 'sinatra'
 require "sinatra/reloader" if development?
 
