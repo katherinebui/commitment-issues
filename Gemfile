@@ -20,6 +20,8 @@ gem 'awesome_print'
 
 gem 'faker'
 
+gem 'resque-scheduler'
+
 gem 'twilio-ruby', '~> 4.11.1'
 
 group :test do

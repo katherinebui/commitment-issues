@@ -27,6 +27,9 @@ GEM
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
     coderay (1.1.1)
+    daemons (1.2.4)
+    delayed_job (2.0.3)
+      daemons
     diff-lcs (1.2.5)
     dotenv (2.1.1)
     factory_girl (4.5.0)
@@ -110,6 +113,7 @@ DEPENDENCIES
   awesome_print
   bcrypt
   capybara
+  delayed_job (= 2.0.3)
   dotenv
   factory_girl
   faker
