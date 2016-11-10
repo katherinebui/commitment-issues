@@ -5,7 +5,12 @@ helpers do
     "Are you tired? Don't forget to commit!", 
     "When life gives you messages, commit them.", 
     "When was the last time you committed?",
-    "Commitment issues? Never again!"]
+    "Commitment issues? Never again!",
+    "Baby, you are the one- I am committed to you.",
+    "Commitment isn't as scary as it seems.",
+    "Sometimes you just have to stop and commit.",
+    "I have 99 problems and commitment issues ain't one.".
+    "Stop playing with my feelings and commit!"]
 
 
     twilio_sid = ENV['ACCOUNT_SID']
