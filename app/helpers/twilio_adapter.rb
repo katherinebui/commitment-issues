@@ -1,6 +1,5 @@
 helpers do
 
-
   def send_text_message
     reminders = ["No commitment issues!", 
     "Are you tired? Don't forget to commit!", 

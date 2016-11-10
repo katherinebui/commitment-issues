@@ -18,6 +18,8 @@ gem 'pry-byebug'
 gem 'rb-readline'
 gem 'awesome_print'
 
+gem 'whenever', require: false
+
 gem 'faker'
 
 gem 'twilio-ruby', '~> 4.11.1'

@@ -32,7 +32,11 @@ end
 # USERS SHOW
 get '/users/:id' do
   @user = User.find(params[:id])
-  erb :'users/show'
+  if current_user.id == @user.id
+    erb :'users/show'
+  else 
+    @errors = "Restricted"
+  end
 end
 
 # EDIT
