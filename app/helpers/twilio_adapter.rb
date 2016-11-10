@@ -9,8 +9,10 @@ helpers do
     "Baby, you are the one- I am committed to you.",
     "Commitment isn't as scary as it seems.",
     "Sometimes you just have to stop and commit.",
-    "I have 99 problems and commitment issues ain't one.".
-    "Stop playing with my feelings and commit!"]
+    "I have 99 problems and commitment issues ain't one.",
+    "Stop playing with my feelings and commit!",
+    "Baby, I'm not like the rest- please commit.",
+    "The only thing I am committed to are my commitment issues"]
 
 
     twilio_sid = ENV['ACCOUNT_SID']
@@ -24,7 +26,7 @@ helpers do
       :to => +16197180969,
       :body => reminders.sample
     )
-    end
+end
 
 
 end 

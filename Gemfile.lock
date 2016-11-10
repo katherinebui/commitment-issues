@@ -26,7 +26,6 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
-    chronic (0.10.2)
     coderay (1.1.1)
     diff-lcs (1.2.5)
     dotenv (2.1.1)
@@ -75,6 +74,7 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.2.0)
     rspec-support (3.2.0)
+    rufus-scheduler (3.2.2)
     shotgun (0.9)
       rack (>= 1.0)
     shoulda-matchers (2.8.0)
@@ -99,8 +99,6 @@ GEM
       multi_json (>= 1.3.0)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
-    whenever (0.9.7)
-      chronic (>= 0.6.3)
     xpath (2.0.0)
       nokogiri (~> 1.3)
 
@@ -123,12 +121,12 @@ DEPENDENCIES
   rake
   rb-readline
   rspec (~> 3.0)
+  rufus-scheduler
   shotgun
   shoulda-matchers
   sinatra
   sinatra-contrib
   twilio-ruby (~> 4.11.1)
-  whenever
 
 BUNDLED WITH
    1.13.6

@@ -17,8 +17,8 @@ gem 'shotgun'
 gem 'pry-byebug'
 gem 'rb-readline'
 gem 'awesome_print'
+gem 'rufus-scheduler'
 
-gem 'whenever', require: false
 
 gem 'faker'
 

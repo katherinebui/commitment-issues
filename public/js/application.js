@@ -1,5 +1,4 @@
 $(document).ready(function() {
-  // startReminderListener();
   userSettingListener();
   readyForCommitmentListener();
 });
@@ -44,39 +43,16 @@ var readyForCommitmentListener = function(){
       url: action,
       method: "GET"
     })
-      .done(function(response){
-        console.log(response)
-        // alert("Your reminders have started!");
+      .success(function(response){
+        // console.log(response)
+        alert("Your reminders have started!");
       })
       .fail(function(response){
-        // alert("Something went wrong!");
+        alert("Something went wrong!");
       })
 
   });
 };
-
-
-
-
-// var startReminderListener = function(){
-//   $("#start-button").click(function(event){
-//     event.preventDefault();
-//     // console.log("fuck the default")
-//   // setInterval(function(){
-//     var route = $("#usersetting").attr("href");
-//     // console.log(route)
-//     $.ajax({
-//       url: route,
-//       method: "GET"
-//     })
-//       .done(function(response){
-//         console.log(response)
-//         alert("Let's start solvin' yo commitment issues!")
-//     });
-//    // }, 35000);
-//   });
-// }
-
 
 
 
