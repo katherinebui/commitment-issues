@@ -1,6 +1,7 @@
 $(document).ready(function() {
   // startReminderListener();
   userSettingListener();
+  readyForCommitmentListener();
 });
 
 
@@ -31,6 +32,18 @@ var userSettingListener = function(){
 };
 
 
+var readyForCommitmentListener = function(){
+  $("#buttons").on("click", "#ready", function(event){
+    event.preventDefault();
+    // console.log("fuck the default");
+
+    var action = $(this).attr("href");
+    // console.log(action)
+  })
+};
+
+
+
 
 // var startReminderListener = function(){
 //   $("#start-button").click(function(event){
@@ -49,7 +62,7 @@ var userSettingListener = function(){
 //     });
 //    // }, 35000);
 //   });
-}
+// }
 
 
 

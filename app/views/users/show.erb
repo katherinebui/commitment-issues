@@ -1,12 +1,9 @@
-  <% if current_user %>
-
   <h2>Welcome <%= current_user.username %>!</h2>
   <div class="userprofile">
     <a id="usersetting" href="/users/<%= @user.id %>/edit" >User Settings</a><br>
   </div>
-  <div>
-    <button name="button" id="start-button" class="btn btn-success">Start my reminders!</button><br>
-     <button name="button" id="stop-button">Stop my reminders!</button>
-  </div>
 
-  <% end %>
+  <div id="buttons">
+    <a href="/reminders" class="btn btn-success" id="ready">I am ready for commitment.</a>
+    <a href="/reminders" class="btn btn-success">I need a break.</a>
+  </div>
