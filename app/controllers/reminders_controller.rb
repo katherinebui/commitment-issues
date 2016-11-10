@@ -1,7 +1,8 @@
 get '/reminders' do 
-  # if request.xhr?
+  send_text_message
+  if request.xhr?
     erb :'users/show'
-  # else
-    # @errors = "Something went wrong!"
-  # end
+  else
+    erb :'users/show'
+  end
 end

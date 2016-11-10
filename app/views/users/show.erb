@@ -1,9 +1,13 @@
-  <h2>Welcome <%= current_user.username %>!</h2>
+<% if current_user %>
+
+<h2>Welcome <%= current_user.username %>!</h2>
   <div class="userprofile">
-    <a id="usersetting" href="/users/<%= @user.id %>/edit" >User Settings</a><br>
+    <a class="btn btn-warning" id="usersetting" href="/users/<%= current_user.id %>/edit" >Can I get yo digits?</a><br>
   </div>
 
   <div id="buttons">
-    <a href="/reminders" class="btn btn-success" id="ready">I am ready for commitment.</a>
-    <a href="/reminders" class="btn btn-success">I need a break.</a>
+    <a href="/reminders" class="btn btn-success" id="ready">I am ready for commitment.</a><br>
+    <a href="/reminders" class="btn btn-danger">I need a break.</a>
   </div>
+
+<% end %>

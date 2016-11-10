@@ -39,7 +39,20 @@ var readyForCommitmentListener = function(){
 
     var action = $(this).attr("href");
     // console.log(action)
-  })
+
+    $.ajax({
+      url: action,
+      method: "GET"
+    })
+      .done(function(response){
+        console.log(response)
+        // alert("Your reminders have started!");
+      })
+      .fail(function(response){
+        // alert("Something went wrong!");
+      })
+
+  });
 };
 
 
