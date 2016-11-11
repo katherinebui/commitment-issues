@@ -22,7 +22,7 @@ var userSettingListener = function(){
       url: action
     })
       .done(function(response){
-        $(".userprofile").append(response);
+        $(".userprofile").prepend(response);
         form.hide();
         // console.log(response)
       })

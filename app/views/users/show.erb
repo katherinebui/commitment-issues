@@ -1,13 +1,10 @@
 <% if current_user %>
-
+<center>
 <h2>Welcome <%= current_user.username %>!</h2>
   <div class="userprofile">
-    <a class="btn btn-warning" id="usersetting" href="/users/<%= current_user.id %>/edit" >Can I get yo digits?</a><br>
+    <a class="btn btn btn-info btn-lg btn-block" id="usersetting" href="/users/<%= current_user.id %>/edit" >Can I get yo digits?</a>
+    <a href="/reminders/start" class="btn btn-success btn-lg btn-block" id="ready">I am ready for commitment.</a> 
+    <a href="/reminders/stop" class="btn btn-danger btn-lg btn-block" id="done">I need a break.</a>
   </div>
-
-  <div id="buttons">
-    <a href="/reminders/start" class="btn btn-success" id="ready">I am ready for commitment.</a><br>
-    <a href="/reminders/stop" class="btn btn-danger" id="done">I need a break.</a>
-  </div>
-
+</center>
 <% end %>
