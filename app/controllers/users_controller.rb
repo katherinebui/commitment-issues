@@ -41,8 +41,6 @@ end
 
 # EDIT
 get '/users/:id/edit' do
-  p "*" * 100
-  p params
   @user = User.find(params[:id])
   if request.xhr?
     erb :'partials/_userSetting', layout: false, locals: {user: @user}

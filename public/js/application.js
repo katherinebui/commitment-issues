@@ -1,6 +1,7 @@
 $(document).ready(function() {
   userSettingListener();
   readyForCommitmentListener();
+  stopForCommitmentListener();
 });
 
 
@@ -34,6 +35,7 @@ var userSettingListener = function(){
 var readyForCommitmentListener = function(){
   $("#buttons").on("click", "#ready", function(event){
     event.preventDefault();
+    alert("Your reminders have started!");
     // console.log("fuck the default");
 
     var action = $(this).attr("href");
@@ -43,16 +45,36 @@ var readyForCommitmentListener = function(){
       url: action,
       method: "GET"
     })
-      .success(function(response){
-        // console.log(response)
-        alert("Your reminders have started!");
-      })
-      .fail(function(response){
-        alert("Something went wrong!");
-      })
-
   });
 };
+
+
+var stopForCommitmentListener = function(){
+  $("#buttons").on("click", "#done", function(event){
+    event.preventDefault();
+    // console.log("fuck the default");
+    alert("Baby come back!");
+
+    var action = $(this).attr("href");
+    console.log(action)
+
+    $.ajax({
+      url: action,
+      method: "GET"
+    }).done(function(response) {
+      // alert(response)
+    })
+  });
+};
+
+
+
+
+
+
+
+
+
 
 
 

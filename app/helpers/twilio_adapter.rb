@@ -28,12 +28,22 @@ helpers do
     )
   end
 
+
   def start_scheduler
     scheduler = Rufus::Scheduler.new
-      scheduler.in '3s' do
-        send_text_message
+    @job = scheduler.every '10s' do
+      send_text_message
     end
     scheduler.join
+  end
+
+  def kill
+    @job.kill
+  end
+
+  def running_thread
+    # puts Thread.list.select {|thread| thread.status == "run" }
+    puts scheduler.select(:every)
   end
 
 end 
@@ -43,5 +53,47 @@ end
 
 
 
+
+
+  # def init_scheduler
+  #   @scheduler = Rufus::Scheduler.new
+  #   return @scheduler
+  # end
+
+  # def start_scheduler
+  #   init_scheduler
+  #     @job = @scheduler.every '10s' do
+  #       send_text_message
+  #   end
+  #   @scheduler.join
+  # end
+
+
+  # def stop_scheduler
+  #   init_scheduler
+  #  if @job.running 
+  #     puts " FUCK ITS STILL RUNNING!"
+  #   end  
+  # end
+
+
+
+# def start_scheduler
+#     scheduler = Rufus::Scheduler.new
+#       scheduler.every '1h' do
+#         send_text_message
+#     end
+#     scheduler.join
+#   end
+
+
+
+  # def start_scheduler
+  #   scheduler = Rufus::Scheduler.new
+  #     scheduler.in '3s' do
+  #       send_text_message
+  #   end
+  #   scheduler.join
+  # end
 
 
