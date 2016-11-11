@@ -1,12 +1,10 @@
-<div id="user">
-<% if current_user %>
-<a href="/users/<%= current_user.id %> ">Profile Page</a><br>
-  <form action="/sessions" method="POST">
-    <input type="hidden" name="_method" value="DELETE">
-    <input type="submit" value="Logout">
+<% if current_user %><br>
+  <a  id="pp" class="btn btn-default btn-lg" href="/users/<%= current_user.id %> ">Profile Page</a>
+  <form action="/sessions" method="POST" id="logout">
+    <input type="hidden" name="_method" value="DELETE" >
+    <button class="btn btn-default btn-lg">Logout</button>
   </form>
 <% else %><br><br>
   <a href="/sessions/new" class="btn btn-default btn-lg">Login</a>
   <a href="/users/new"  class="btn btn-default btn-lg">Register</a>
 <% end %>
-</div>
