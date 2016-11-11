@@ -4,7 +4,7 @@ get '/reminders/start' do
   if request.xhr?
     # p "in xhr"
     start_scheduler
-    p running_thread
+    # p running_thread
     erb :'users/show'
   else
     erb :'users/show'

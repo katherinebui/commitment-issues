@@ -31,20 +31,20 @@ helpers do
 
   def start_scheduler
     scheduler = Rufus::Scheduler.new
-    @job = scheduler.every '10s' do
+    @job = scheduler.every '1h' do
       send_text_message
     end
     scheduler.join
   end
 
-  def kill
-    @job.kill
-  end
+  # def kill
+  #   @job.kill
+  # end
 
-  def running_thread
-    # puts Thread.list.select {|thread| thread.status == "run" }
-    puts scheduler.select(:every)
-  end
+  # def running_thread
+  #   # puts Thread.list.select {|thread| thread.status == "run" }
+  #   puts scheduler.select(:every)
+  # end
 
 end 
 
