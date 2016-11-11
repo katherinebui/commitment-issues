@@ -14,7 +14,7 @@ require 'pathname'
 require 'pg'
 require 'active_record'
 require 'logger'
-require 'rufus/scheduler'
+require 'rufus-scheduler'
 
 require 'sinatra'
 require "sinatra/reloader" if development?

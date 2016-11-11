@@ -1,8 +1,9 @@
-get '/reminders' do 
-  scheduler = Rufus::Scheduler.new
+# require 'rufus-scheduler'
 
+get '/reminders' do 
   if request.xhr?
-    schedule
+    p "in xhr"
+    start_scheduler
     erb :'users/show'
   else
     erb :'users/show'
@@ -10,10 +11,7 @@ get '/reminders' do
 end  
 
 
-private
-
-def schedule
-  scheduler.every '1h' do
-    send_text_message
-  end
+delete '/reminders' do
+  scheduler.shutdown
 end
+

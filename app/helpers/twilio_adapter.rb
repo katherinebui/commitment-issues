@@ -26,10 +26,22 @@ helpers do
       :to => +16197180969,
       :body => reminders.sample
     )
-end
+  end
 
+  def start_scheduler
+    scheduler = Rufus::Scheduler.new
+      scheduler.in '3s' do
+        send_text_message
+    end
+    scheduler.join
+  end
 
 end 
 
 
-# still need to hook user phone number up to the to
+
+
+
+
+
+
