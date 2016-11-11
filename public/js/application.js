@@ -2,6 +2,8 @@ $(document).ready(function() {
   userSettingListener();
   readyForCommitmentListener();
   stopForCommitmentListener();
+  tinaClickListener();
+
 });
 
 
@@ -68,7 +70,13 @@ var stopForCommitmentListener = function(){
 };
 
 
-
+var tinaClickListener = function(){
+  $(".tina").hide();
+  $(this).click(function(event){
+    event.stopPropagation();
+    $(".tina").toggle("#1");
+  });
+}
 
 
 
