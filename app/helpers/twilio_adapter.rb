@@ -23,7 +23,7 @@ helpers do
 
     @twilio_client.account.sms.messages.create(
       :from => "+1#{twilio_phone_number}",
-      :to => +1619*******,
+      :to => +0000000000,
       :body => reminders.sample
     )
   end
