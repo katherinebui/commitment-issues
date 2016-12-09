@@ -15,9 +15,7 @@ post '/sessions' do
   end
 end
 
-
-# delete '/sessions/:id' do
 delete '/sessions' do
-  logout 
+  logout
   redirect '/'
 end
