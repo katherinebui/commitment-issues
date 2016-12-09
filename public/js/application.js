@@ -1,6 +1,9 @@
 $(document).ready(function() {
-  // startReminderListener();
   userSettingListener();
+  readyForCommitmentListener();
+  stopForCommitmentListener();
+  tinaClickListener();
+
 });
 
 
@@ -19,7 +22,7 @@ var userSettingListener = function(){
       url: action
     })
       .done(function(response){
-        $(".userprofile").append(response);
+        $(".userprofile").prepend(response);
         form.hide();
         // console.log(response)
       })
@@ -31,25 +34,54 @@ var userSettingListener = function(){
 };
 
 
+var readyForCommitmentListener = function(){
+  $("#buttons").on("click", "#ready", function(event){
+    event.preventDefault();
+    alert("Your reminders have started!");
+    // console.log("fuck the default");
 
-// var startReminderListener = function(){
-//   $("#start-button").click(function(event){
-//     event.preventDefault();
-//     // console.log("fuck the default")
-//   // setInterval(function(){
-//     var route = $("#usersetting").attr("href");
-//     // console.log(route)
-//     $.ajax({
-//       url: route,
-//       method: "GET"
-//     })
-//       .done(function(response){
-//         console.log(response)
-//         alert("Let's start solvin' yo commitment issues!")
-//     });
-//    // }, 35000);
-//   });
+    var action = $(this).attr("href");
+    // console.log(action)
+
+    $.ajax({
+      url: action,
+      method: "GET"
+    })
+  });
+};
+
+
+var stopForCommitmentListener = function(){
+  $("#buttons").on("click", "#done", function(event){
+    event.preventDefault();
+    // console.log("fuck the default");
+    alert("Baby come back!");
+
+    var action = $(this).attr("href");
+    console.log(action)
+
+    $.ajax({
+      url: action,
+      method: "GET"
+    }).done(function(response) {
+      // alert(response)
+    })
+  });
+};
+
+
+var tinaClickListener = function(){
+  $(".tina").hide();
+  $(this).click(function(event){
+    event.stopPropagation();
+    $(".tina").toggle("#1");
+  });
 }
+
+
+
+
+
 
 
 

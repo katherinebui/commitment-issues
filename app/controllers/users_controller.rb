@@ -32,13 +32,15 @@ end
 # USERS SHOW
 get '/users/:id' do
   @user = User.find(params[:id])
-  erb :'users/show'
+  if current_user.id == @user.id
+    erb :'users/show'
+  else 
+    @errors = "Restricted"
+  end
 end
 
 # EDIT
 get '/users/:id/edit' do
-  p "*" * 100
-  p params
   @user = User.find(params[:id])
   if request.xhr?
     erb :'partials/_userSetting', layout: false, locals: {user: @user}
@@ -54,16 +56,16 @@ put '/users/:id' do
   redirect "/users/#{@user.id}"
 end
 
-get '/users/:id/text' do
-  @users = User.find(params[:id])
-  @user_id = params[:id]
-  if request.xhr?
-    # @user_id.to_json
-    send_text_message
-  else
-    redirect "/users/#{@user.id}"
-  end
-end
+# get '/users/:id/text' do
+#   @users = User.find(params[:id])
+#   @user_id = params[:id]
+#   if request.xhr?
+#     # @user_id.to_json
+#     send_text_message
+#   else
+#     redirect "/users/#{@user.id}"
+#   end
+# end
 
 
 

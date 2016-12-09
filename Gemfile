@@ -18,6 +18,9 @@ gem 'pry-byebug'
 gem 'rb-readline'
 gem 'awesome_print'
 
+gem 'rufus-scheduler', '< 3.0.0'
+
+
 gem 'faker'
 
 gem 'twilio-ruby', '~> 4.11.1'
